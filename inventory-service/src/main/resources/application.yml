@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: InventoryServiceMS
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/inventory-service
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+server:
+  port: 0
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+

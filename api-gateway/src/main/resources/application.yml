@@ -1,0 +1,31 @@
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+spring:
+  application:
+    name: ApiGateway
+logging:
+  level:
+    root: INFO
+server:
+  port: 8080
+
+## Service Routes
+spring.cloud:
+  gateway:
+    routes:
+      - id: ProductServiceMS
+        uri: lb://ProductServiceMS
+        predicates:
+          - Path=/api/product
+
+      - id: OrderServiceMS
+        uri: lb://OrderServiceMS
+        predicates:
+          - Path=/api/order
+
+      - id: InventoryServiceMS
+        uri: lb://InventoryServiceMS
+        predicates:
+          - Path=/api/inventory
