@@ -29,3 +29,15 @@ spring.cloud:
         uri: lb://InventoryServiceMS
         predicates:
           - Path=/api/inventory
+
+      - id: DiscoveryServer
+        uri: http://localhost:8761
+        predicates:
+          - Path=/eureka/web
+        filters:
+          - SetPath=/
+
+      - id: DiscoveryServerStatic
+        uri: http://localhost:8761
+        predicates:
+          - Path=/eureka/**
