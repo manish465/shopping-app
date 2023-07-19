@@ -6,7 +6,6 @@ import com.manish.orderservice.model.Order;
 import com.manish.orderservice.model.OrderLineItems;
 import com.manish.orderservice.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
